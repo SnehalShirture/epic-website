@@ -1,8 +1,8 @@
 import React from "react";
-import {Nav,Navbar} from "react-bootstrap"
+import { Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-function MyNavbar(){
+function MyNavbar() {
   return (
     <div>
       <Navbar collapseOnSelect variant="dark" bg="dark" expand="lg">
@@ -14,13 +14,13 @@ function MyNavbar(){
               <Link to="/">Home</Link>
             </Nav.Link>
             <Nav.Link>
-              <Link to="/offers">Offers</Link>
-            </Nav.Link>
-            <Nav.Link>
               <Link to="/about">About</Link>
             </Nav.Link>
             <Nav.Link>
               <Link to="/team">Team</Link>
+            </Nav.Link>
+            <Nav.Link>
+              <Link to="/batches">Batches</Link>
             </Nav.Link>
             <Nav.Link>
               <Link to="/services">Services</Link>
@@ -36,6 +36,6 @@ function MyNavbar(){
       </Navbar>
     </div>
   );
-};
+}
 
 export default MyNavbar;

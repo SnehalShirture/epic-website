@@ -4,12 +4,13 @@ import axios from "axios";
 
 import { FaInstagramSquare, FaFacebook,  FaYoutube } from "react-icons/fa";
 import "./Team.css";
+import { API_URL } from "../utils";
 const Team = () => {
   const [TrainerData, setTrainerData] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/getalltrainer")
+      .get(API_URL+"getalltrainer")
       .then((result) => {
         console.log("Trainer", result.data);
         setTrainerData(result.data);
@@ -40,13 +41,13 @@ const Team = () => {
                   <p>{Trainer.Email}</p>
                   <p>{Trainer.MobileNo}</p>
                   <div className="row-about">
-                      <a href={Trainer.InstagramUrl} className="ig">
+                      <a href={Trainer.InstagramUrl} target="_blank" className="ig">
                         <FaInstagramSquare />
                       </a>
-                      <a href={Trainer.FacebookUrl} className="fb">
+                      <a href={Trainer.FacebookUrl} target="_blank"  className="fb">
                         <FaFacebook />
                       </a>
-                      <a href={Trainer.YoutubeUrl} className="yt">
+                      <a href={Trainer.YoutubeUrl} target="_blank"  className="yt">
                         <FaYoutube />
                       </a>
                     </div>
