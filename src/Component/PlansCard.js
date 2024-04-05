@@ -1,18 +1,26 @@
 import React from "react";
-import { Card, Col, Row } from "react-bootstrap";
+import { Button, Card, Col, Row } from "react-bootstrap";
+import "./plancrd.css"
+import logo from "../Images/epic logo.png"
+import { useNavigate } from "react-router-dom";
 
 const PlansCard = ({ plans }) => {
+const navi = useNavigate()
   return (
     <>
       <Row>
         {plans.map((plamItem) => {
         return (
           <Col sm={12} md={6} lg={3}>
+            
             <Card
+               className="plancrd"
               key={plamItem._id}
               style={{ width: "18rem", marginBottom: "10px" }}
             >
-              <Card.Body>
+             
+              <Card.Body className="plancrd">
+              <img className="logoimg"src={logo}></img>
                 <Card.Title>{plamItem.PlanName}</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">
                   Duration: {plamItem.Duration}
@@ -26,6 +34,9 @@ const PlansCard = ({ plans }) => {
                   <br />
                   <strong>Discounted Amount:</strong> {plamItem.Discount}
                 </Card.Text>
+                <Button  class=" btn btn-info" onClick={()=>{navi ("/takeadmision")}} >
+                  Book Now 
+                </Button>
               </Card.Body>
             </Card>
           </Col>

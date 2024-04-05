@@ -1,0 +1,43 @@
+.nav{
+    background-color: transparent;
+    
+}
+.navlinks{
+    display: flex;
+    justify-content: center;
+    color: rgb(214, 233, 233);
+    overflow: hidden;
+    /* background-color: azure; */
+    width: 100%;
+}
+.profilelogo{
+   
+    height: 35px;
+    width: 35px;
+    margin-right: 45px;
+    
+}
+
+.logo{
+    height: 50px;
+    padding-left: 25px;
+    /* margin: 25px; */
+    
+}
+.menu{
+    font-size: 20px;
+    text-decoration: none;
+    margin-right: 40px;
+    color: bisque;
+    font-family: Inter-Bold, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+
+}
+
+.regform{
+    height: 400px;
+    width: 900px !important
+}
+.regmodal{
+    width: 700px !important;
+    border: 2px solid peru;
+}

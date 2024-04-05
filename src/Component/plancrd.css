@@ -1,3 +1,11 @@
-.plancard{
+.plancrd {
+  background-color: rgb(143, 243, 248);
+  text-align: center;
+  height: 350px;
+}
+.logoimg {
+  height: 50px;
+  width: 80px;
   
+  position: relative;
 }

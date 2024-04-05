@@ -1,8 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { API_URL } from "../utils";
-import PlanCard from "./PlanCard";
-import { Card, Container, Tab, Tabs } from "react-bootstrap";
+import { Container, Tab, Tabs } from "react-bootstrap";
 import PlansCard from "./PlansCard";
 
 function Services() {
@@ -22,7 +21,7 @@ function Services() {
 
   return (
     <>
-      <div></div>
+     
       <div>
         <Tabs
           defaultActiveKey={0}

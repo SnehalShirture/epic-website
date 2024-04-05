@@ -5,10 +5,9 @@ import Home from "./Component/Home";
 import About from "./Component/About";
 import Team from "./Component/Team";
 import Services from "./Component/Services";
-import Login from "./Component/Login";
-import Registration from "./Component/Registration";
-import Batches from "./Component/Batches";
 
+import Batches from "./Component/Batches";
+import TakeAdmisssion from "./Component/TakeAdmisssion";
 function MyRoutes() {
   return (
     <div>
@@ -20,8 +19,9 @@ function MyRoutes() {
           <Route path="/batches" element={<Batches />}></Route>
           <Route path="/team" element={<Team />}></Route>
           <Route path="/services" element={<Services />}></Route>
-          <Route path="/login" element={<Login />}></Route>
-          <Route path="/registration" element={<Registration />}></Route>
+          <Route path="/takeadmision" element={<TakeAdmisssion
+ />}></Route>
+          
         </Routes>
       </BrowserRouter>
     </div>
