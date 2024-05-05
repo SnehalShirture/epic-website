@@ -23,6 +23,7 @@ function MyNavbar() {
   const dispatcher = useDispatch();
   const [Name, setName] = useState("");
   const [Email, setEmail] = useState("");
+  const [EmailPassword, setEmailPassword] = useState("");
   const [MobileNo, setMobileNo] = useState("");
   const [Address, setAddress] = useState("");
   const [Occupation, setOccupation] = useState("");
@@ -31,6 +32,7 @@ function MyNavbar() {
     const UserData = {
       Name: Name,
       Email: Email,
+      EmailPassword: EmailPassword,
       MobileNo: MobileNo,
       Address: Address,
       Occupation: Occupation,
@@ -38,9 +40,11 @@ function MyNavbar() {
     axios
       .post(API_URL + "adduser", UserData)
       .then((result) => {
+        setshowmodel(false);
         alert("User Added");
         console.log("Data", result.data);
-        window.location.reload(false);
+        dispatcher(register(result.data));
+        // window.location.reload(false);
       })
       .catch((err) => {
         console.log(err);
@@ -89,16 +93,21 @@ function MyNavbar() {
         </Navbar.Collapse>
       </Navbar>
 
-        <Modal className=" p-5 " show={showmodel} size="lg"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered onHide={() => setshowmodel(false)}  >
-        <Modal.Header closeButton className="bg-dark" >
+      <Modal
+        className=" p-5 "
+        show={showmodel}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+        onHide={() => setshowmodel(false)}
+      >
+        <Modal.Header closeButton className="bg-dark">
           <Modal.Title className="text-light ">Registration</Modal.Title>
         </Modal.Header>
 
         <Container className="p-5 w-100 bg-white">
           <Row>
-            <Form >
+            <Form>
               <Row>
                 <Col>
                   <Form.Group>
@@ -112,18 +121,6 @@ function MyNavbar() {
                 </Col>
                 <Col>
                   <Form.Group>
-                    <Form.Label className="p-1">Email</Form.Label>
-                    <Form.Control
-                      text="text"
-                      placeholder="Email"
-                      onChange={(e) => setEmail(e.target.value)}
-                    />
-                  </Form.Group>
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                  <Form.Group>
                     <Form.Label className="p-1">MobileNo</Form.Label>
                     <Form.Control
                       text="text"
@@ -132,6 +129,30 @@ function MyNavbar() {
                     />
                   </Form.Group>
                 </Col>
+                <Row>
+                  <Col>
+                    <Form.Group>
+                      <Form.Label className="p-1">Email</Form.Label>
+                      <Form.Control
+                        text="text"
+                        placeholder="Email"
+                        onChange={(e) => setEmail(e.target.value)}
+                      />
+                    </Form.Group>
+                  </Col>
+                  <Col>
+                    <Form.Group>
+                      <Form.Label className="p-1">Password</Form.Label>
+                      <Form.Control
+                        text="text"
+                        placeholder="Password"
+                        onChange={(e) => setEmailPassword(e.target.value)}
+                      />
+                    </Form.Group>
+                  </Col>
+                </Row>
+              </Row>
+              <Row>
                 <Col>
                   <Form.Group>
                     <Form.Label className="p-1">Address</Form.Label>
@@ -142,24 +163,34 @@ function MyNavbar() {
                     />
                   </Form.Group>
                 </Col>
+                <Col>
+                  <Form.Group>
+                    <Form.Label className="p-1">Occupation</Form.Label>
+                    <Form.Control
+                      text="text-area"
+                      placeholder="Occupation"
+                      onChange={(e) => setOccupation(e.target.value)}
+                    />
+                  </Form.Group>
+                </Col>
               </Row>
               <Form.Group>
-                <Form.Label className="p-1">Occupation</Form.Label>
-                <Form.Control
-                  text="text-area"
-                  placeholder="Occupation"
-                  onChange={(e) => setOccupation(e.target.value)}
-                />
-              </Form.Group>
-              <Form.Group>
-              <div className="mt-4">
-                <Button variant="danger" className="me-3 w-25" onClick={() => setshowmodel(false)}>
-                  Close
-                </Button>
-                <Button className="w-25" onClick={() => submitform()} variant="primary">
-                  Submit
-                </Button>
-              </div>
+                <div className="mt-4">
+                  <Button
+                    variant="danger"
+                    className="me-3 w-25"
+                    onClick={() => setshowmodel(false)}
+                  >
+                    Close
+                  </Button>
+                  <Button
+                    className="w-25"
+                    onClick={() => submitform()}
+                    variant="primary"
+                  >
+                    Submit
+                  </Button>
+                </div>
               </Form.Group>
             </Form>
           </Row>

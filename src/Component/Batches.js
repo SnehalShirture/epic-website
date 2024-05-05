@@ -1,10 +1,15 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { Table } from 'react-bootstrap';
+import { Button, Table } from 'react-bootstrap';
 import "./Batches.css"
 import { API_URL } from '../utils';
+import { useLocation, useNavigate } from 'react-router-dom';
+
 function Batches() {
+  const { state } = useLocation();
+
     const [BatchData, setBatchData] = useState([]);
+    const navi = useNavigate();
 
     useEffect(() => {
         axios
@@ -42,6 +47,7 @@ function Batches() {
         ))}
       </tbody>
     </Table>
+   
   </div>
   )
 }

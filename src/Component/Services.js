@@ -3,9 +3,12 @@ import React, { useEffect, useState } from "react";
 import { API_URL } from "../utils";
 import { Container, Tab, Tabs } from "react-bootstrap";
 import PlansCard from "./PlansCard";
+import { useSelector } from "react-redux";
+import { IoIosLogIn } from "react-icons/io";
 
 function Services() {
   const [AllPlanData, setAllPlanData] = useState([]);
+  const { IsLogin } = useSelector((state) => state.user);
 
   useEffect(() => {
     axios
@@ -21,7 +24,6 @@ function Services() {
 
   return (
     <>
-     
       <div>
         <Tabs
           defaultActiveKey={0}
@@ -32,11 +34,12 @@ function Services() {
             return (
               <Tab key={index} eventKey={index} title={plans._id}>
                 <Container>
-                  <PlansCard plans={plans.plam}  />
+                  <PlansCard logedIn={IsLogin} plans={plans.plam} />
                 </Container>
               </Tab>
             );
           })}
+          {console.log(IsLogin)}
         </Tabs>
       </div>
     </>
