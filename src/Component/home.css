@@ -1,15 +1,217 @@
+
+.fronth2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.highlight {
+  color: #1E90FF;
+  font-weight: bold;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* Hero Section */
 .video-background {
-    width: 100%;
-    height: 100%;
-  } 
-  
-  .video-background video {
-    position: absolute;
-    object-fit: cover;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100vh;    
-    z-index: -100;
-    transform: translateX(-50%) translateY(-50%);
-  }
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.overlay-content h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 5px black;
+}
+
+.overlay-content p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  background-color: #1E90FF;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+  background-color: #4169E1;
+  color: white;
+}
+
+.benefits {
+  background-color: #f0f8ff;
+  padding: 4rem 1rem;
+}
+
+.benefits-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.benefit-card {
+  background: #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  width: 250px;
+  transition: transform 0.3s;
+}
+
+.benefit-card h3 {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.benefit-icon {
+  font-size: 3rem;
+  color: #1E90FF;
+}
+
+.benefit-card:hover {
+  transform: scale(1.05);
+}
+
+.trainers {
+  background-color: #f8f8f8;
+  padding: 4rem 1rem;
+}
+
+.trainer-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.trainer-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 300px;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+.trainer-card p { text-align: center;}
+.trainer-card h3 {
+  margin-top: 1rem;
+}
+
+.trainer-card img {
+  width: 100%;
+  height: 70%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.transformations {
+  background-color: #f0f8ff;
+  padding: 4rem 1rem;
+}
+
+.transformation-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.transformation-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 300px;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.transformation-card img {
+  width: 100%;
+  height: 75%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Review Section */
+.reviews {
+  background-color: #f8f8f8;
+  padding: 4rem 1rem;
+}
+
+.review-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.review-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 300px;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.review-card p {
+  font-style: italic;
+}
+
+.gallery {
+  padding: 4rem 1rem;
+  background-color: #f0f8ff;
+}
+
+.gallery-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.gallery-item {
+  max-width: 300px;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
