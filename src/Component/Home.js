@@ -73,12 +73,12 @@ function Home() {
           <div className="transformation-card">
             <img src={dummy} alt="Before After" />
             <p>"I lost 20 kg in just 6 months with the help of FitZone trainers!"</p>
-            <h4>- Emily Brown</h4>
+            <h4>- Sejal Nehete</h4>
           </div>
           <div className="transformation-card">
             <img src={dummy} alt="Before After" />
             <p>"I gained 10 kg of lean muscle and transformed my physique!"</p>
-            <h4>- Jake Wilson</h4>
+            <h4>- Harshal Mahajan</h4>
           </div>
         </div>
       </section>
